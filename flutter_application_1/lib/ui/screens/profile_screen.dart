@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/theme/app_colors.dart';
 import 'package:flutter_application_1/core/theme/app_fonts.dart';
+import 'package:flutter_application_1/ui/screens/login_screen.dart';
 
 import '../../core/assets/app_images.dart';
 import '../widgets/app_button.dart';
@@ -55,7 +56,12 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Center(
               child: AppButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
+                },
                 title: "Войти",
               ),
             ),

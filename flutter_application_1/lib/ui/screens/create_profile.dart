@@ -19,7 +19,11 @@ class CreateProfile extends StatelessWidget {
           style: AppFonts.w600s17.copyWith(color: AppColors.black),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(
+              context,
+            );
+          },
           icon: Icon(
             Icons.close,
             color: AppColors.black.withOpacity(0.54),
@@ -43,7 +47,12 @@ class CreateProfile extends StatelessWidget {
             const SizedBox(height: 149),
             Center(
               child: AppButton(
-                onPressed: () {},
+                onPressed: () {
+                  //  Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => const ...()));
+                },
                 title: "Войти",
               ),
             ),

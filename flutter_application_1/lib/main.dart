@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/ui/screens/create_profile.dart';
+import 'package:flutter_application_1/ui/screens/login_screen.dart';
 import 'package:flutter_application_1/ui/screens/profile_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "SF Pro Display",
       ),
-      home: const CreateProfile(),
+      home: const ProfileScreen(),
     );
   }
 }
