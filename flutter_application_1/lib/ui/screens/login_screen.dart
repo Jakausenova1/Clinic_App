@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/theme/app_colors.dart';
 import 'package:flutter_application_1/core/theme/app_fonts.dart';
-import 'package:flutter_application_1/ui/screens/create_profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/app_button.dart';
+import 'confirm_number.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -100,10 +100,11 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     );
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const CreateProfile())); //поменять на 3 скрин
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ConfirmNumber(),
+                      ),
+                    );
                   }),
             ),
           ],
