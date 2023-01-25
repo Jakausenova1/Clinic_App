@@ -25,10 +25,10 @@ class AppTextField extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             focusedBorder: const UnderlineInputBorder(
-              borderSide: BorderSide(color: AppColors.darkGrey),
+              borderSide: BorderSide(color: AppColors.carbon),
             ),
             hintText: hintText,
-            hintStyle: AppFonts.w400s17.copyWith(color: AppColors.grey),
+            hintStyle: AppFonts.w400s17.copyWith(color: AppColors.smokeScreen),
           ),
         ),
       ],

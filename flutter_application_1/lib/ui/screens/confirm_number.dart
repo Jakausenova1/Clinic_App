@@ -32,7 +32,7 @@ class _ConfirmNumberState extends State<ConfirmNumber> {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: AppColors.blue,
+            color: AppColors.bluesonki,
           ),
         ),
       ),
@@ -85,7 +85,7 @@ class _ConfirmNumberState extends State<ConfirmNumber> {
               onPressed: () {},
               child: Text(
                 'Получить код повторно',
-                style: AppFonts.w400s15.copyWith(color: AppColors.blue),
+                style: AppFonts.w400s15.copyWith(color: AppColors.bluesonki),
               ),
             ),
             const SizedBox(

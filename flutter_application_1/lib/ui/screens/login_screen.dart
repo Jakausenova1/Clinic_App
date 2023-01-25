@@ -70,10 +70,10 @@ class _LoginPageState extends State<LoginPage> {
                 prefix: const Text("0", style: AppFonts.w700s17),
                 hintText: "___ __ __ __",
                 focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
+                  borderSide: BorderSide(width: 2, color: AppColors.carbon),
                 ),
                 enabledBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
+                  borderSide: BorderSide(width: 2, color: AppColors.carbon),
                 ),
               ),
             ),
