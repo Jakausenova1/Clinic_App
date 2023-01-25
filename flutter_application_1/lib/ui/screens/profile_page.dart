@@ -4,9 +4,9 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_fonts.dart';
 import '../../models/doctor_models.dart';
 import '../widgets/app_tab_bar.dart';
-import 'articles.dart';
-import 'doctors.dart';
-import 'my_doctors.dart';
+// import 'articles.dart';
+// import 'doctors.dart';
+// import 'my_doctors.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -122,10 +122,25 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        backgroundColor: AppColors.blue,
         onPressed: () {},
-        child: Image.asset(
-          AppImages.call,
-          color: AppColors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Image.asset(
+                AppImages.call,
+                color: AppColors.white,
+                width: 23,
+                height: 23,
+              ),
+              Text(
+                "Вызов",
+                style: AppFonts.w500s10.copyWith(color: AppColors.white),
+              )
+            ],
+          ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

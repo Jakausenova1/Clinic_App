@@ -16,35 +16,36 @@ class TabViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 32,
-          ),
-          Image.asset(image),
-          const SizedBox(
-            height: 22,
-          ),
-          Text(
-            text,
-            style: AppFonts.w500s15.copyWith(color: AppColors.lightGrey),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(
-            height: 33,
-          ),
-          Center(
-            child: TextButton(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 32,
+            ),
+            Image.asset(image),
+            const SizedBox(
+              height: 22,
+            ),
+            Text(
+              text,
+              style: AppFonts.w500s15.copyWith(color: AppColors.lightGrey),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 33,
+            ),
+            TextButton(
                 onPressed: () {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(AppImages.adddoc),
                     const SizedBox(width: 10),
                     const Text('Добавить документ'),
                   ],
                 )),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

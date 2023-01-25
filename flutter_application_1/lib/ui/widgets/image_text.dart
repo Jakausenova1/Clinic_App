@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../core/assets/app_images.dart';
 import '../../core/theme/app_fonts.dart';
 
 class ImageAndText extends StatelessWidget {
