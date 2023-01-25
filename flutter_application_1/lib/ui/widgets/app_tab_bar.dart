@@ -4,9 +4,16 @@ import 'package:flutter_application_1/core/theme/app_colors.dart';
 import 'package:flutter_application_1/ui/widgets/tab.dart';
 import 'package:flutter_application_1/ui/widgets/tab_view.dart';
 
-class AppTabBar extends StatelessWidget {
+class AppTabBar extends StatefulWidget {
   const AppTabBar({super.key});
 
+  @override
+  State<AppTabBar> createState() => _AppTabBarState();
+}
+
+int currentIndex = 0;
+
+class _AppTabBarState extends State<AppTabBar> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,6 +26,10 @@ class AppTabBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: const [
               TabBar(
+                // onTap: (index) {
+                //   setState(() {});
+                // },
+                // controller: _,
                 indicatorSize: TabBarIndicatorSize.tab,
                 isScrollable: true,
                 indicatorColor: AppColors.tabColors,

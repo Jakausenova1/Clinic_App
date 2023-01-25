@@ -15,6 +15,8 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
+int currentIndex = 0;
+
 class _ProfilePageState extends State<ProfilePage> {
   List<DoctorModel> doctors = [
     DoctorModel(
@@ -147,6 +149,13 @@ class _ProfilePageState extends State<ProfilePage> {
       bottomNavigationBar: SizedBox(
         height: 83,
         child: BottomNavigationBar(
+          onTap: (index) {
+            currentIndex = index;
+            setState(() {});
+          },
+          currentIndex: currentIndex,
+          selectedItemColor: AppColors.blue,
+          unselectedItemColor: AppColors.lightGrey,
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white.withOpacity(0.92),
           items: const [
