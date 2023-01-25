@@ -30,33 +30,35 @@ class CreateProfile extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const AppTextField(
-              text: 'Имя',
-              hintText: 'Введите ваше имя',
-            ),
-            const SizedBox(height: 32),
-            const AppTextField(
-              text: 'Фамилия',
-              hintText: 'Введите вашу фамилию',
-            ),
-            const SizedBox(height: 149),
-            Center(
-              child: AppButton(
-                onPressed: () {
-                  //  Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => const ...()));
-                },
-                title: "Войти",
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const AppTextField(
+                text: 'Имя',
+                hintText: 'Введите ваше имя',
               ),
-            ),
-          ],
+              const SizedBox(height: 32),
+              const AppTextField(
+                text: 'Фамилия',
+                hintText: 'Введите вашу фамилию',
+              ),
+              const SizedBox(height: 149),
+              Center(
+                child: AppButton(
+                  onPressed: () {
+                    //  Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) => const ...()));
+                  },
+                  title: "Войти",
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

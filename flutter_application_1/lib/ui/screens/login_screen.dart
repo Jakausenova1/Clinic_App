@@ -42,72 +42,74 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("Войти", style: AppFonts.w700s34),
-            const SizedBox(height: 50),
-            const Text("Номер телефона", style: AppFonts.w400s15),
-            TextField(
-              controller: controller,
-              style: AppFonts.w700s17,
-              onChanged: (val) {
-                if (val.isNotEmpty && val.length < 9) {
-                  errorText = "Введите корректные данные";
-                } else {
-                  errorText = null;
-                }
-                setState(() {});
-              },
-              keyboardType: TextInputType.phone,
-              maxLength: 9,
-              decoration: InputDecoration(
-                hintStyle: AppFonts.w700s17,
-                errorText: errorText,
-                counterText: "",
-                prefix: const Text("0", style: AppFonts.w700s17),
-                hintText: "___ __ __ __",
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
-                ),
-                enabledBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("Войти", style: AppFonts.w700s34),
+              const SizedBox(height: 50),
+              const Text("Номер телефона", style: AppFonts.w400s15),
+              TextField(
+                controller: controller,
+                style: AppFonts.w700s17,
+                onChanged: (val) {
+                  if (val.isNotEmpty && val.length < 9) {
+                    errorText = "Введите корректные данные";
+                  } else {
+                    errorText = null;
+                  }
+                  setState(() {});
+                },
+                keyboardType: TextInputType.phone,
+                maxLength: 9,
+                decoration: InputDecoration(
+                  hintStyle: AppFonts.w700s17,
+                  errorText: errorText,
+                  counterText: "",
+                  prefix: const Text("0", style: AppFonts.w700s17),
+                  hintText: "___ __ __ __",
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
+                  ),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(width: 2, color: AppColors.darkGrey),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 15),
-            const Text(
-              "На указанный вами номер придет однократное СМС-сообщение с кодом подтверждения.",
-              style: AppFonts.w400s15,
-            ),
-            const SizedBox(height: 108),
-            Center(
-              child: AppButton(
-                  title: "Далее",
-                  onPressed: () async {
-                    SharedPreferences.setMockInitialValues({});
-                    final prefs = await SharedPreferences.getInstance();
-                    prefs.setString("phone", controller.text);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          code.toString(),
-                          style:
-                              AppFonts.w600s18.copyWith(color: AppColors.white),
+              const SizedBox(height: 15),
+              const Text(
+                "На указанный вами номер придет однократное СМС-сообщение с кодом подтверждения.",
+                style: AppFonts.w400s15,
+              ),
+              const SizedBox(height: 108),
+              Center(
+                child: AppButton(
+                    title: "Далее",
+                    onPressed: () async {
+                      SharedPreferences.setMockInitialValues({});
+                      final prefs = await SharedPreferences.getInstance();
+                      prefs.setString("phone", controller.text);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            code.toString(),
+                            style: AppFonts.w600s18
+                                .copyWith(color: AppColors.white),
+                          ),
                         ),
-                      ),
-                    );
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ConfirmNumber(),
-                      ),
-                    );
-                  }),
-            ),
-          ],
+                      );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConfirmNumber(),
+                        ),
+                      );
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );
