@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
+  /// Figma design  https://www.figma.com/file/3RYEAy11qJo2PItHBoyZyg/My-CLINIC_APP?node-id=0%3A1&t=OhMjrIPJA8ZeuMgs-1
   
   static const Color black = Colors.black;
   static const Color white = Colors.white;
