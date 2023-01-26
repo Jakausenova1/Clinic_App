@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/assets/app_images.dart';
 import 'package:flutter_application_1/core/theme/app_colors.dart';
-import 'package:flutter_application_1/ui/widgets/tab.dart';
 import 'package:flutter_application_1/ui/widgets/tab_view.dart';
+
+import '../../core/theme/app_fonts.dart';
 
 class AppTabBar extends StatefulWidget {
   const AppTabBar({super.key});
@@ -24,12 +25,8 @@ class _AppTabBarState extends State<AppTabBar> {
           elevation: 0.5,
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               TabBar(
-                // onTap: (index) {
-                //   setState(() {});
-                // },
-                // controller: _,
                 indicatorSize: TabBarIndicatorSize.tab,
                 isScrollable: true,
                 indicatorColor: AppColors.tabColors,
@@ -37,17 +34,41 @@ class _AppTabBarState extends State<AppTabBar> {
                 labelColor: AppColors.tabColors,
                 unselectedLabelColor: AppColors.lightGrey,
                 tabs: [
-                  TabWidget(
-                    image: AppImages.analizy,
-                    text: 'Анализы',
+                  Tab(
+                    child: Column(
+                      children: const [
+                        ImageIcon(
+                          AssetImage(AppImages.analizy),
+                          size: 18,
+                        ),
+                        SizedBox(height: 5),
+                        Text("Анализы", style: AppFonts.w500s15),
+                      ],
+                    ),
                   ),
-                  TabWidget(
-                    image: AppImages.diagnozy,
-                    text: 'Диагнозы',
+                  Tab(
+                    child: Column(
+                      children: const [
+                        ImageIcon(
+                          AssetImage(AppImages.diagnozy),
+                          size: 18,
+                        ),
+                        SizedBox(height: 5),
+                        Text("Диагнозы", style: AppFonts.w500s15),
+                      ],
+                    ),
                   ),
-                  TabWidget(
-                    image: AppImages.rec,
-                    text: 'Рекомендации',
+                  Tab(
+                    child: Column(
+                      children: const [
+                        ImageIcon(
+                          AssetImage(AppImages.rec),
+                          size: 18,
+                        ),
+                        SizedBox(height: 5),
+                        Text("Рекомендации", style: AppFonts.w500s15),
+                      ],
+                    ),
                   ),
                 ],
               ),
